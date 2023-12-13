@@ -30,14 +30,42 @@ a {
 a:hover {
   color: #333;
   letter-spacing: 1px;
+  text-decoration: underline;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+  min-height: 100vh;
+}
+.wrapper > * {
+  padding: 0.6rem;
+  flex: 1 100%;
+}
+
+.main {
+  background-color: deepskyblue;
+  text-align: left;
+  padding: 1rem;
+}
+.aside1 {
+  background-color: gold;
+}
+.aside2 {
+  background-color: hotpink;
+}
+.footer {
+  background-color: lightgreen;
 }
 
 
 
 
-/* Here goes media querys*/
+/* Here goes media queries. To => biggeer screens*/
 
-@media screen and (min-width: 570px) {
+@media screen and (min-width: 600px) {
   /* This styling will only apply when the screen is smaller than 570px in width. BUT the styling from the media query above will still be in effect. */
 body {
     font-size: 130%;
@@ -49,15 +77,25 @@ body {
  
 
   .logo {
-    font-size: 2em;
+    font-size: 2rem;
   }
 
   a {
-    font-size: 1em;
+    font-size: 1rem;
   }
+
+  .aside {
+    flex: 1;
+  }
+
+
+
 }
 
-@media screen and (min-width: 800px) {
+
+
+
+@media screen and (min-width: 992px) {
   /* This styling will only apply as long as the screen is smaller than 800 px in width*/
 
   body {
@@ -66,6 +104,20 @@ body {
   nav {
     background-color: aquamarine;
   }
-  
+  .main {
+    flex: 3 0px;
+  }
+  .aside1 {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .aside2 {
+    order: 3;
+  }
+  .footer {
+    order: 4;
+  }
 }
 
